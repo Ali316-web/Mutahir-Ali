@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Mutahir Ali</title>
+<meta name="description" content="Projects by Mutahir Ali — Web Developer & Digital Marketing Specialist.">
+<link rel="stylesheet" href="CSS files/project.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<canvas id="bg-canvas"></canvas>
+
+<!-- ══════════════════════════════════════════════════
+     ██████████████████████████████████████████████
+     █  PROJECTS DATA — EDIT THIS SECTION ONLY    █
+     ██████████████████████████████████████████████
+     ══════════════════════════════════════════════════ -->
+<script>
+/*
+  ╔══════════════════════════════════════════════════════════════╗
+  ║               HOW TO ADD / EDIT PROJECTS                    ║
+  ║                                                              ║
+  ║  Each project is an object in the PROJECTS array below.     ║
+  ║  Fill in the fields for each project.                       ║
+  ║                                                              ║
+  ║  IMAGE OPTIONS:                                              ║
+  ║    • Use a URL: image: "https://yoursite.com/img.jpg"       ║
+  ║    • Use a local file: image: "images/project1.jpg"         ║
+  ║    • No image: image: null  (shows emoji icon instead)      ║
+  ║                                                              ║
+  ║  STATUS OPTIONS: "live" | "wip" | "concept"                 ║
+  ║  CATEGORY: any text, used for filtering                     ║
+  ║  featured: true → shows as wide spotlight card              ║
+  ╚══════════════════════════════════════════════════════════════╝
+*/
+
+const PROJECTS = [
+
+  /* ── PROJECT 1 ─────────────────────────────── */
+  {
+    id: 1,
+    title: "Maria and Jenny",
+    category: "FULL STACK",
+    year: "2026",
+    status: "concept",            // "live" | "wip" | "concept"
+    featured: true,            // true = wide spotlight card at top
+    image: "Images/Screenshot 2026-06-07 151105.png",               // e.g. "images/maria-jenny.jpg" or a URL
+    imageBg: "linear-gradient(135deg, #0a001a 0%, #120a2e 50%, #0d1520 100%)",
+    imageIcon: "👩‍💼",           // shown when no image
+    imageLabel: "E-COMMERCE",
+
+    description: "Maria and Jenny is a responsive fashion e-commerce website featuring product displays, customer reviews, and a modern user interface. Built with HTML, CSS, and JavaScript to deliver a smooth and engaging shopping experience across all devices.",
+
+    longDescription: "The platform features dedicated sections for showcasing products, highlighting customer reviews, and presenting brand information in a clean and structured manner. Users can easily browse through different product categories, explore detailed product information, and enjoy a smooth shopping journey across all devices. The responsive design ensures that the website adapts perfectly to desktops, tablets, and smartphones, providing a consistent user experience regardless of screen size.",
+
+    features: [
+      "Modern and visually appealing e-commerce design",
+      "Fully responsive layout for all screen sizes",
+      "Product showcase and catalog sections",
+      "Customer reviews and testimonials page",
+      "Easy-to-use navigation system",
+      "Dedicated product detail pages"
+    ],
+
+    tech: ["HTML5", "CSS3", "JavaScript", "jQuery", "PHP", "PHP Mailer Library", "Composer", "MYSQL Databased"],
+
+    github: "https://github.com/Ali316-web/MARIA-JENNY",               // Replace with real GitHub URL
+    
+  },
+
+  /* ── PROJECT 2 ─────────────────────────────── */
+  {
+    id: 2,
+    title: "TECHtide",
+    category: "FRONTEND",
+    year: "2026",
+    status: "live",
+    featured: false,
+    image: "Images/Screenshot 2026-06-06 094233.png",
+    imageBg: "linear-gradient(135deg, #001a0d 0%, #0d2010 50%, #001520 100%)",
+    imageIcon: null,
+    imageLabel: "Blog Platform",
+
+    description: "A dark-themed tech blog website built with HTML & CSS — featuring gadget reviews, animated UI, and a contact form. No frameworks, just vibes.",
+
+    longDescription: "TechTide is a front-end web project I built from scratch using nothing but HTML and CSS. It's a multi-page tech blog concept centered around gadget reviews, tech news, and innovation — styled with a dark futuristic look using cyan accents, custom fonts, and smooth animations.",
+
+    features: [
+      "Dark Futuristic Theme — Deep dark background with cyan accent colors and custom Google Fonts (Orbitron, Rajdhani, Poppins) giving the site a clean sci-fi aesthetic throughout all pages.",
+      "Animated Navigation Bar — A pill-shaped floating nav bar with glowing cyan hover effects and smooth color transitions, consistent across every page.",
+      "CSS Animations & Hover Effects — Logo slides in on load, cards lift on hover, sections fade up into view — all done with pure CSS keyframes and transitions, no JavaScript.",
+      "About Page with Stats Strip — A dedicated about page featuring an embedded video, audio player, animated stat cards (reviews, readers, satisfaction rate), and separate mission & vision sections.",
+      "Styled Contact Form — A two-column contact form with fully custom-styled radio buttons, checkboxes, and text inputs that glow cyan on focus — plus a smooth success confirmation message on submit.",
+      "esponsive Layout — Built with CSS Grid and Flexbox so the layout adapts naturally across different screen sizes without any CSS framework like Bootstrap."
+    ],
+
+    tech: ["HTML", "Css", "JavaScript"],
+
+    github: "https://github.com/Ali316-web/TECHtide",
+    live: "https://ali316-web.github.io/TECHtide/",
+  },
+
+  /* ── PROJECT 3 ─────────────────────────────── */
+  {
+    id: 3,
+    title: "LUXE INTERIORS",
+    category: "FRONTEND E-COMMERCE",
+    year: "2026",
+    status: "live",
+    featured: false,
+    image: "Images/Screenshot 2026-06-06 214849.png",
+    imageBg: "linear-gradient(135deg, #1a0800 0%, #1f0d1a 50%, #0f1020 100%)",
+    imageIcon: null,
+    imageLabel: "INTERIOR DESIGN WEBSITE",
+
+    description: "Luxe Interior is a modern and responsive interior design website showcasing elegant home décor, luxury living spaces, and professional design services. Built using HTML, CSS, and JavaScript with a clean user interface and smooth user experience.",
+
+    longDescription: "Luxe Interior is a modern and fully responsive interior design website created to showcase luxury home interiors, elegant living spaces, and professional design services. The website features a clean and visually appealing layout, smooth navigation, and dedicated sections for showcasing interior projects, design inspirations, services, and client-focused content. Built using HTML, CSS, and JavaScript, this project demonstrates front-end web development skills, responsive design principles, and modern UI/UX practices to deliver an engaging user experience across desktop and mobile devices.",
+
+
+    features: [
+      "Modern and Elegant Design – Clean, luxury-inspired interface with visually appealing layouts.",
+      "Fully Responsive Layout – Optimized for desktops, tablets, and mobile devices.",
+      "Project Showcase Section – Displays interior design projects with images and detailed information.",
+      "Services Section – Highlights interior design services and solutions offered to clients.",
+      "Interactive Navigation – Smooth and user-friendly navigation across all pages.",
+      "Contact Section – Easy-to-use contact form and business information for client inquiries."
+    ],
+
+     tech: ["HTML", "Css", "JavaScript", "JQuery"],
+
+    github: "https://github.com/Ali316-web/LUXE-INTERIOR",
+    live: "https://ali316-web.github.io/LUXE-INTERIOR/",                // null = hides live preview button
+  },
+
+  /* ── PROJECT 4 ─────────────────────────────── */
+  {
+    id: 4,
+    title: "LAW-BRIDGE",
+    category: "React.JS",
+    year: "2026",
+    status: "concept",
+    featured: false,
+    image: "Images/Screenshot 2026-07-27 163631.png",
+    imageBg: "linear-gradient(135deg, #1a1000 0%, #1a1500 50%, #0a1020 100%)",
+    imageIcon: null,
+    imageLabel: null,
+
+    description: "LawBridge – AI-Powered Legal Assistance Platform LawBridge is a modern legal assistance platform designed to simplify access to legal information and services.",
+
+    longDescription: "LawBridge is a modern legal assistance platform designed to simplify access to legal information and services. The application enables users to explore legal resources, search for lawyers, book consultations, and access legal documents through an intuitive and responsive interface. The platform focuses on making legal support more accessible while maintaining a clean, user-friendly experience. Built with React.js for the frontend and a PHP & MySQL backend, LawBridge follows a scalable architecture that supports secure user authentication, lawyer profile management, appointment scheduling, and legal document handling. Rather than depending on external chatbot APIs, the platform is designed to implement its own intelligent legal recommendation and knowledge system, providing users with relevant legal guidance based on structured data and predefined logic.",
+
+    features: [
+      "Responsive and modern user interface built with React.js.",
+      "Secure user registration and authentication.",
+      "Lawyer directory with search and filtering capabilities.",
+      "Online appointment booking and consultation management.",
+      "Legal document and resource library.",
+      "AI-inspired legal recommendation system without third-party chatbot APIs.",
+      "Role-based access for users, lawyers, and administrators."
+    ],
+
+    tech: ["HTML", "CSS", "JavaScript", "JSON", "Google Analytics API", "MYSQL", "TypeScript"],
+
+    github: "https://github.com/Ali316-web/LAW-BRIDGE",
+    // live: "#",
+  },
+
+  /* ─────────────────────────────────────────────
+     TEMPLATE — Copy this block to add a new project
+     ─────────────────────────────────────────────
+  {
+    id: 5,
+    title: "Your Project Title",
+    category: "Web Dev",           // "Full Stack" | "Portfolio" | "Desktop App" | "Digital Marketing" | ...
+    year: "2025",
+    status: "live",                // "live" | "wip" | "concept"
+    featured: false,
+    image: null,                   // "path/to/image.jpg" or null
+    imageBg: "linear-gradient(135deg, #0a0a1a 0%, #0d1020 100%)",
+    imageIcon: "🚀",
+    imageLabel: "Project Preview",
+
+    description: "Short description shown on the card (1-2 sentences).",
+
+    longDescription: "Longer description shown in the detail modal. Explain the purpose, process, and any challenges.",
+
+    features: [
+      "Feature one",
+      "Feature two",
+      "Feature three",
+    ],
+
+    tech: ["React", "Node.js", "MongoDB"],
+
+    github: "#",
+    live: "#",
+  },
+  ────────────────────────────────────────────── */
+
+];
+</script>
+<!-- ══ END OF PROJECTS DATA ══ -->
+
+<!-- ─── NAVBAR ─── -->
+<nav id="navbar">
+  <a href="mutahir-portfolio.html" class="nav-logo">Mutahir<span>.</span>Ali</a>
+  <ul class="nav-links">
+    <li><a href="mutahir-portfolio.html#about">About</a></li>
+    <li><a href="mutahir-portfolio.html#skills">Skills</a></li>
+    <li><a href="mutahir-portfolio.html#education">Education</a></li>
+    <li><a href="mutahir-portfolio.html#experience">Experience</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="mutahir-portfolio.html#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="mutahir-portfolio.html">← Back to Portfolio</a>
+  <a href="mutahir-portfolio.html#about">About</a>
+  <a href="mutahir-portfolio.html#skills">Skills</a>
+  <a href="mutahir-portfolio.html#experience">Experience</a>
+  <a href="mutahir-portfolio.html#contact">Contact</a>
+</nav>
+
+<!-- ─── PAGE HEADER ─── -->
+<div class="page-header">
+  <div class="page-tag">Mutahir Ali · Portfolio</div>
+  <h1 class="page-title">All<br><em>Projects</em></h1>
+  <p class="page-desc">A curated collection of real-world projects spanning web development, full-stack applications, desktop software, and digital marketing.</p>
+  <div class="stats-bar" id="stats-bar">
+    <!-- filled by JS -->
+  </div>
+</div>
+
+<!-- ─── FILTER + VIEW TOGGLE ─── -->
+<div class="filter-wrap">
+  <div class="filter-group" id="filter-group">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <!-- category buttons injected by JS -->
+  </div>
+  <div class="view-toggle">
+    <button class="view-btn active" id="grid-btn" title="Grid view">⊞</button>
+    <button class="view-btn" id="list-btn" title="List view">☰</button>
+  </div>
+</div>
+
+<!-- ─── PROJECTS GRID ─── -->
+<div class="projects-wrap">
+  <div class="projects-grid" id="projects-grid">
+    <!-- injected by JS -->
+  </div>
+</div>
+
+<!-- ─── DETAIL MODAL ─── -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modal-close">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-copy">© 2025 <strong>Mutahir Ali</strong> · Karachi 🇵🇰</div>
+  <div class="footer-right">// <span id="proj-count">0</span> projects &amp; counting</div>
+</footer>
+
+<script>
+/* ════════════════════════════
+   CANVAS PARTICLES
+════════════════════════════ */
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let W = canvas.width = window.innerWidth;
+let H = canvas.height = window.innerHeight;
+window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
+
+const pts = Array.from({ length: 60 }, () => ({
+  x: Math.random() * W, y: Math.random() * H,
+  vx: (Math.random() - 0.5) * 0.25,
+  vy: (Math.random() - 0.5) * 0.25,
+  r: Math.random() * 1.2 + 0.3,
+  o: Math.random() * 0.35 + 0.05,
+  c: Math.random() > 0.65 ? '#00e5ff' : '#7c3aed'
+}));
+
+function animPts() {
+  ctx.clearRect(0, 0, W, H);
+  pts.forEach(p => {
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0 || p.x > W) p.vx *= -1;
+    if (p.y < 0 || p.y > H) p.vy *= -1;
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.c; ctx.globalAlpha = p.o; ctx.fill(); ctx.globalAlpha = 1;
+  });
+  requestAnimationFrame(animPts);
+}
+animPts();
+
+/* ════════════════════════════
+   NAVBAR
+════════════════════════════ */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', scrollY > 40);
+});
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobile-nav').classList.toggle('open');
+});
+
+/* ════════════════════════════
+   BUILD UI FROM PROJECTS DATA
+════════════════════════════ */
+const grid = document.getElementById('projects-grid');
+const filterGroup = document.getElementById('filter-group');
+let activeFilter = 'all';
+let isListView = false;
+
+// Derive unique categories
+const categories = [...new Set(PROJECTS.map(p => p.category))];
+categories.forEach(cat => {
+  const btn = document.createElement('button');
+  btn.className = 'filter-btn';
+  btn.dataset.filter = cat;
+  btn.textContent = cat;
+  filterGroup.appendChild(btn);
+});
+
+// Stats bar
+const statBar = document.getElementById('stats-bar');
+const liveCount = PROJECTS.filter(p => p.status === 'live').length;
+const techSet = new Set(PROJECTS.flatMap(p => p.tech));
+statBar.innerHTML = `
+  <div class="stat"><div class="stat-num">${PROJECTS.length}<span>+</span></div><div class="stat-label">Projects</div></div>
+  <div class="stat"><div class="stat-num">${liveCount}<span></span></div><div class="stat-label">Live / Deployed</div></div>
+  <div class="stat"><div class="stat-num">${techSet.size}<span>+</span></div><div class="stat-label">Technologies</div></div>
+  <div class="stat"><div class="stat-num">${categories.length}<span></span></div><div class="stat-label">Categories</div></div>
+`;
+document.getElementById('proj-count').textContent = PROJECTS.length;
+
+/* ── Status label map ── */
+const statusLabel = { live: '● Live', wip: '⟳ In Progress', concept: '◌ Concept' };
+const statusClass = { live: 'status-live', wip: 'status-wip', concept: 'status-concept' };
+
+/* ── Build a single card ── */
+function buildCard(proj, delay) {
+  const card = document.createElement('div');
+  card.className = 'project-card' + (proj.featured ? ' featured' : '');
+  card.style.animationDelay = delay + 'ms';
+  card.dataset.category = proj.category;
+
+  const imgHtml = proj.image
+    ? `<img src="${proj.image}" alt="${proj.title}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'img-placeholder\\'><span class=\\'ph-icon\\'>${proj.imageIcon}</span><span class=\\'ph-label\\'>${proj.imageLabel}</span></div>'">`
+    : `<div class="img-placeholder" style="background:${proj.imageBg}"><span class="ph-icon">${proj.imageIcon}</span><span class="ph-label">${proj.imageLabel}</span></div>`;
+
+  const liveBtn = proj.live ? `<a href="${proj.live}" target="_blank" rel="noopener" class="proj-link live">↗ Live Preview</a>` : '';
+  const featuredRibbon = proj.featured ? `<div class="featured-ribbon">★ Featured</div>` : '';
+
+  const featuresHtml = proj.features.slice(0, 4).map(f => `<li>${f}</li>`).join('');
+
+  card.innerHTML = `
+    <div class="project-img-wrap">
+      ${imgHtml}
+      <span class="img-status ${statusClass[proj.status]}">${statusLabel[proj.status]}</span>
+      ${featuredRibbon}
+      <div class="img-overlay">
+        <div class="img-overlay-links">
+          <a href="${proj.github}" target="_blank" rel="noopener" class="overlay-link">⬡ GitHub</a>
+          ${proj.live ? `<a href="${proj.live}" target="_blank" rel="noopener" class="overlay-link">↗ Live</a>` : ''}
+        </div>
+      </div>
+    </div>
+    <div class="project-body">
+      <div class="project-meta">
+        <span class="project-category">${proj.category}</span>
+        <span class="project-year">${proj.year}</span>
+      </div>
+      <div class="project-title">${proj.title}</div>
+      <div class="project-desc">${proj.description}</div>
+      <ul class="project-features">${featuresHtml}</ul>
+      <div class="project-tech">${proj.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
+      <div class="project-links">
+        <a href="${proj.github}" target="_blank" rel="noopener" class="proj-link github">⬡ GitHub</a>
+        ${liveBtn}
+        <button class="proj-link details" onclick="openModal(${proj.id})" title="View Details">⤢</button>
+      </div>
+    </div>
+  `;
+
+  return card;
+}
+
+/* ── Render grid ── */
+function renderProjects(filter) {
+  grid.innerHTML = '';
+  const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter);
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty-state"><div class="empty-icon">🔍</div><p>No projects in this category yet.</p></div>`;
+    return;
+  }
+
+  // Featured first
+  const sorted = [...filtered].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+
+  sorted.forEach((proj, i) => {
+    const card = buildCard(proj, i * 80);
+    grid.appendChild(card);
+  });
+}
+
+renderProjects('all');
+
+/* ── Filter buttons ── */
+filterGroup.addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = btn.dataset.filter;
+  renderProjects(activeFilter);
+});
+
+/* ── View toggle ── */
+document.getElementById('grid-btn').addEventListener('click', () => {
+  isListView = false;
+  grid.classList.remove('list-view');
+  document.getElementById('grid-btn').classList.add('active');
+  document.getElementById('list-btn').classList.remove('active');
+});
+document.getElementById('list-btn').addEventListener('click', () => {
+  isListView = true;
+  grid.classList.add('list-view');
+  document.getElementById('list-btn').classList.add('active');
+  document.getElementById('grid-btn').classList.remove('active');
+});
+
+/* ════════════════════════════
+   MODAL
+════════════════════════════ */
+function openModal(id) {
+  const proj = PROJECTS.find(p => p.id === id);
+  if (!proj) return;
+
+  const imgHtml = proj.image
+    ? `<img class="modal-img" src="${proj.image}" alt="${proj.title}" onerror="this.style.display='none'">`
+    : `<div class="modal-img-placeholder" style="background:${proj.imageBg}">${proj.imageIcon}</div>`;
+
+  const liveBtn = proj.live ? `<a href="${proj.live}" target="_blank" rel="noopener" class="modal-link live">↗ Live Preview</a>` : '';
+
+  document.getElementById('modal-content').innerHTML = `
+    ${imgHtml}
+    <div class="modal-body">
+      <div class="modal-category">${proj.category} · ${proj.year}</div>
+      <div class="modal-title">${proj.title}</div>
+      <p class="modal-desc">${proj.longDescription || proj.description}</p>
+      <div class="modal-section-title">Key Features</div>
+      <ul class="modal-features">${proj.features.map(f => `<li>${f}</li>`).join('')}</ul>
+      <div class="modal-section-title">Technologies Used</div>
+      <div class="modal-tech">${proj.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
+      <div class="modal-links">
+        <a href="${proj.github}" target="_blank" rel="noopener" class="modal-link github">⬡ View on GitHub</a>
+        ${liveBtn}
+      </div>
+    </div>
+  `;
+
+  document.getElementById('modal-backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('modal-backdrop').addEventListener('click', e => {
+  if (e.target === document.getElementById('modal-backdrop')) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
