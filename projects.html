@@ -49,7 +49,7 @@ const PROJECTS = [
     category: "FULL STACK",
     year: "2026",
     status: "concept",            // "live" | "wip" | "concept"
-    featured: true,            // true = wide spotlight card at top
+    featured: false,            // true = wide spotlight card at top
     image: "Images/Screenshot 2026-06-07 151105.png",               // e.g. "images/maria-jenny.jpg" or a URL
     imageBg: "linear-gradient(135deg, #0a001a 0%, #120a2e 50%, #0d1520 100%)",
     imageIcon: "👩‍💼",           // shown when no image
@@ -172,37 +172,84 @@ const PROJECTS = [
     // live: "#",
   },
 
-  /* ─────────────────────────────────────────────
-     TEMPLATE — Copy this block to add a new project
-     ─────────────────────────────────────────────
+  //  *─────────────────────────────────────────────
+  //    TEMPLATE — Copy this block to add a new project
+  //    ───────────────────────────────────────────── */
   {
     id: 5,
-    title: "Your Project Title",
-    category: "Web Dev",           // "Full Stack" | "Portfolio" | "Desktop App" | "Digital Marketing" | ...
-    year: "2025",
-    status: "live",                // "live" | "wip" | "concept"
+    title: "Give-Aid — NGO & Donation Management System",
+    category: "Asp.NET Core MVC",           // "Full Stack" | "Portfolio" | "Desktop App" | "Digital Marketing" | ...
+    year: "2026",
+    status: "concept",                // "live" | "wip" | "concept"
     featured: false,
-    image: null,                   // "path/to/image.jpg" or null
+    image: "Images/Screenshot 2026-10-12 221918.png",                   // "path/to/image.jpg" or null
     imageBg: "linear-gradient(135deg, #0a0a1a 0%, #0d1020 100%)",
-    imageIcon: "🚀",
-    imageLabel: "Project Preview",
+    imageIcon: null,
+    imageLabel: null,
 
-    description: "Short description shown on the card (1-2 sentences).",
+    description: "A web-based charity management platform that helps organize donations, charitable causes, associated NGOs, and administrative operations through a centralized system.",
 
-    longDescription: "Longer description shown in the detail modal. Explain the purpose, process, and any challenges.",
+    longDescription: "Give-Aid is a charity and NGO management web application designed to connect donors with charitable causes and social welfare organizations. The platform provides a donation workflow, cause management, NGO directory, and an administrative dashboard for managing donations, website content, and user inquiries. Built with ASP.NET Core MVC, C#, Entity Framework Core, and SQL Server, it aims to simplify donation management and support the digital operations of nonprofit organizations.",
 
     features: [
-      "Feature one",
-      "Feature two",
-      "Feature three",
+      "Donation management: Donors can enter their details, select a charitable cause, specify a donation amount, and proceed through the checkout workflow.",
+      "Charitable cause management: Administrators can create, view, edit, and delete donation causes, with fields for descriptions, categories, fundraising targets, collected amounts, and status.",
+      "NGO directory management: Maintain records of associated NGOs, including organization names, locations, focus areas, and active status.",
+      "Authentication and role-based access: ASP.NET Core Identity provides account management, while role-based authorization restricts several administrative modules to users with the Admin role.",
+      "Contact and inquiry management: Administrators can review contact messages, inspect inquiries, update contact statuses, and manage submitted records.",
+      "Gallery and website content management: Includes modules for managing gallery items, members, partners, and programmer records, along with public-facing informational pages.",
+      "Database-driven architecture: Uses Entity Framework Core and Microsoft SQL Server to persist application records, with ASP.NET Core Identity supporting account and role management.",
     ],
 
-    tech: ["React", "Node.js", "MongoDB"],
+    tech: ["C# and ASP.NET Core MVC", "Entity Framework Core", "Microsoft SQL Server", "HTML, CSS, Bootstrap, and JavaScript", "ASP.NET Core Identity"],
 
-    github: "#",
-    live: "#",
+    github: "https://github.com/Ali316-web/Give-Aid-NGO-Donation-Management-System",
+    // live: "#",
   },
-  ────────────────────────────────────────────── */
+ 
+  {
+    id: 6,
+    title: "MarketLink — Agricultural Marketplace Management System",
+    category: "Asp.NET Core MVC",           // "Full Stack" | "Portfolio" | "Desktop App" | "Digital Marketing" | ...
+    year: "2026",
+    status: "live",                // "live" | "wip" | "concept"
+    featured: true,
+    image: "Images/Screenshot 2026-10-15 181148.png",                   // "path/to/image.jpg" or null
+    imageBg: "linear-gradient(135deg, #0a0a1a 0%, #0d1020 100%)",
+    imageIcon: null,
+    imageLabel: null,
+
+    description: "MarketLink is a web-based agricultural marketplace that connects farmers with customers, making it easier to manage agricultural products, inventory, and orders. It features farmer and customer management, product listings, market administration, order tracking, customer reviews, and an administrative dashboard. Built with C#, ASP.NET Core MVC, Entity Framework Core, and SQL Server, the platform aims to simplify agricultural commerce through a centralized digital solution.",
+
+    longDescription: "MarketLink is a web-based agricultural marketplace designed to connect farmers with customers and simplify the management of agricultural products, markets, and orders. The platform includes farmer management, product listings, inventory tracking, order processing, customer reviews, market administration, and reporting tools. Developed using C#, ASP.NET Core MVC, Entity Framework Core, and Microsoft SQL Server, MarketLink provides a foundation for a centralized digital marketplace for agricultural products.",
+
+    features: [
+      "Farmer Registration and Management: Register farmers, manage their profiles, and review or suspend farmer accounts.",
+      "Product Management: Manage agricultural products with pricing, descriptions, categories, images, and availability information.",
+      "Customer Management: View customer records, search customers, filter by status, and manage customer accounts.",
+      "Online Ordering System: Support product orders, order items, quantities, pricing, and order totals.",
+      "Order and Payment Status Tracking: Maintain order statuses and payment statuses, with support for cash on delivery as a payment method.",
+      "Market Management: Manage market names, locations, addresses, operating days, opening hours, and map information.",
+      "Inventory Management: Track available product quantities and configure stock reorder thresholds.",
+      "Product Categories: Organize agricultural products into categories for easier browsing and management.",
+      "Customer Reviews and Ratings: Store customer feedback and ratings for products or farmers.",
+      "Content Moderation: Review flagged products and reviews and remove inappropriate or problematic content.",
+      "Favorites and Saved Items: Allow the data model to support saving favorite farmers and products for quick access.",
+      "Admin Dashboard: Provides a centralized area for managing farmers, customers, markets, reports, and marketplace settings.",
+      "Reports Management: Generate and track administrative reports for marketplace operations.",
+      "Announcements and Notifications: Manage announcements for different audiences and store user notifications.",
+      "Category and Settings Management: Add, rename, and delete product categories and manage marketplace announcements.",
+      "User Authentication: Implement user registration, login, logout, and account management using ASP.NET Core Identity.",
+      "Role and Access Control Foundation: Uses authenticated access restrictions for administrative controllers.",
+      "Audit Logging Data Model: Includes an audit log structure for recording user actions and related application activity.",
+    ],
+
+    tech: ["C# and ASP.NET Core MVC", "Entity Framework Core Version 8", "Microsoft SQL Server", "HTML, CSS, Bootstrap, and JavaScript", "ASP.NET Core Identity"],
+
+    github: "https://github.com/Ali316-web/MarketLink-Agricultural-Marketplace-Management-System",
+    live: "https://sfc-infiniteloop.runasp.net/",
+  },
+ 
 
 ];
 </script>
